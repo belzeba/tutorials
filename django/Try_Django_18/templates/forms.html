@@ -1,19 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Contact</title>
-</head>
-<body>
+{# Inherit base.html #}
+{% extends 'base.html' %}
 
-{# CSRF token added to give some security #}
-<form method="POST" action="">{% csrf_token %}
+{# Load 3rd party tags for forms #}
+{% load crispy_forms_tags %}
 
-    {# Render our custom form. .as_p formats our form in parahraphs #}
-    {{ form.as_p }}
+{# Content Block #}
+{% block content %}
+    {# Bootstrap row and column magic to get responsive site #}
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+            {# Show title if it exists #}
+            {% if title %}
+                <h1 {% if title_align_center %}class="text-align-center"{% endif %}>{{ title }}</h1>
+            {% endif %}
 
-    <input type="submit" value="Contact Us">
-</form>
+            {# CSRF token added to give some security #}
+            <form method="POST" action="">{% csrf_token %}
 
-</body>
-</html>
+                {# Render our custom form. |crispy loads crispy_forms to our form #}
+                {{ form|crispy }}
+
+                <input class="btn btn-default" type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+{% endblock %}

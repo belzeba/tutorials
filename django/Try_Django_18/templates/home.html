@@ -11,26 +11,29 @@
 
 {# CSS Block #}
 <style>
-{% block style %}
+    {% block style %}
 
-{% endblock %}
+    {% endblock %}
 </style>
 
-{# Block for content of Jumbotron #}
-{% block jumbotron_content %}
-    {# Bootstrap row and column magic to get responsive site #}
-    <div class="row">
-        <div class="col-sm-6">
-            <h1>Try Django 1.8 Tutorial</h1>
-            <p>This is Django 1.8 "The MVP Landing project". This Tutorial goes over the very basic
-                but fundamental things and concepts. Be sure to try it out!</p>
-            <p>
-                <a class="btn btn-lg btn-primary" href="" role="button">Join Us &raquo;</a>
-            </p>
-        </div>
-        {# Div for video ... #}
-        <div class="col-sm-6" style="background-color: #0f0f0f;height: 300px;">
+{# Block for Jumbotron #}
+{% block jumbotron %}
+    <!-- Main component for a primary marketing message or call to action -->
+    <div class="jumbotron">
+        {# Bootstrap row and column magic to get responsive site #}
+        <div class="row">
+            <div class="col-sm-6">
+                <h1>Try Django 1.8 Tutorial</h1>
+                <p>This is Django 1.8 "The MVP Landing project" tutorial. This Tutorial goes over the very basic
+                    but fundamental things and concepts. Be sure to try it out!</p>
+                <p>
+                    <a class="btn btn-lg btn-primary" href="" role="button">Join Us &raquo;</a>
+                </p>
+            </div>
+            {# Div for video ... #}
+            <div class="col-sm-6" style="background-color: #0f0f0f;height: 300px;">
 
+            </div>
         </div>
     </div>
 {% endblock %}

@@ -7,6 +7,11 @@ from .forms import ContactForm
 # Create your views here.
 # View for contacts
 def contact(request):
+    # Page Title
+    title = "Contact Us"
+    # Boolean for centered text
+    title_align_center = True
+
     # Add custom form to variable. If POST data is found, send it for validation, else not
     form = ContactForm(request.POST or None)
 
@@ -37,6 +42,8 @@ def contact(request):
     # Context variable to use with rendering
     context = {
         "form": form,
+        "title": title,
+        "title_align_center": title_align_center,
     }
 
     # Return the template with context
