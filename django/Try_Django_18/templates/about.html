@@ -1,0 +1,15 @@
+{# Inherit base.html #}
+{% extends 'base.html' %}
+
+{# Load 3rd party tags for forms #}
+{% load crispy_forms_tags %}
+
+{# Content Block #}
+{% block content %}
+    {# Bootstrap row and column magic to get responsive site #}
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+            About Page
+        </div>
+    </div>
+{% endblock %}
