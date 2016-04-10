@@ -27,6 +27,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# Configured Email Host
+EMAIL_HOST = 'smtp.kolumbus.fi'
+EMAIL_PORT = 25
+
 
 # Application definition
 
