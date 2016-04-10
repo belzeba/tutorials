@@ -9,25 +9,30 @@
     Welcome |
 {% endblock %}
 
-{# Jumbotron block #}
-{% block jumbotron %}
-<!-- Main component for a primary marketing message or call to action -->
-<div class="jumbotron">
-    <h1>Navbar example</h1>
-    <p>This example is a quick exercise to illustrate how the default, static and fixed to top navbar work. It includes
-        the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
-    <p>To see the difference between static and fixed top navbars, just scroll.</p>
-    <p>
-        <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">View navbar docs &raquo;</a>
-    </p>
-</div>
+{# Block for content of Jumbotron #}
+{% block jumbotron_content %}
+    {# Bootstrap row and column magic to get responsive site #}
+    <div class="row">
+        <div class="col-sm-6">
+            <h1>Try Django 1.8 Tutorial</h1>
+            <p>This is Django 1.8 "The MVP Landing project". This Tutorial goes over the very basic
+                but fundamental things and concepts. Be sure to try it out!</p>
+            <p>
+                <a class="btn btn-lg btn-primary" href="" role="button">Join Us &raquo;</a>
+            </p>
+        </div>
+        {# Div for video ... #}
+        <div class="col-sm-6" style="background-color: #0f0f0f;height: 300px">
+
+        </div>
+    </div>
 {% endblock %}
 
 {# Make block that shows in base.html -template block #}
 {% block content %}
     <div class="row">
-        <div class="col-sm-6 col-md-3">
-            <h1>{{ title }}</h1>
+        <div class="col-sm-3 pull-right">
+            <p class="lead">{{ title }}</p>
 
             {% comment these show that you can access username without adding it to context %}
             {{ user }}
@@ -42,6 +47,15 @@
 
                 <input class="btn btn-primary" type="submit" value="Sign Up">
             </form>
+        </div>
+        <div class="col-sm-3">
+            <p class="lead">Have fun with Django &amp; Bootstrap</p>
+        </div>
+        <div class="col-sm-3">
+            <p class="lead">Tutorial for beginners of any kind.</p>
+        </div>
+        <div class="col-sm-3">
+            <p class="lead">Open Source - Always</p>
         </div>
     </div>
 

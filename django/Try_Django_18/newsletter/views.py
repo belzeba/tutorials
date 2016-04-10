@@ -13,8 +13,8 @@ def home(request):
     form = SignUpForm(request.POST or None)
 
     # Check is the user authenticated and change title if is
-    if request.user.is_authenticated():
-        title += " {0}".format(request.user)
+    """if request.user.is_authenticated():
+        title += " {0}".format(request.user)"""
 
     # Context variable to use with rendering
     context = {
