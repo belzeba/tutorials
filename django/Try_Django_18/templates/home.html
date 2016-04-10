@@ -25,20 +25,24 @@
 
 {# Make block that shows in base.html -template block #}
 {% block content %}
-    <h1>{{ title }}</h1>
+    <div class="row">
+        <div class="col-sm-6 col-md-3">
+            <h1>{{ title }}</h1>
 
-    {% comment these show that you can access username without adding it to context %}
-    {{ user }}
-    {{ request.user }}
-    {% endcomment %}
+            {% comment these show that you can access username without adding it to context %}
+            {{ user }}
+            {{ request.user }}
+            {% endcomment %}
 
-    {# CSRF token added to give some security #}
-    <form method="POST" action="">{% csrf_token %}
+            {# CSRF token added to give some security #}
+            <form method="POST" action="">{% csrf_token %}
 
-        {# Render our custom form. .as_p formats our form in parahraphs #}
-        {{ form|crispy }}
+                {# Render our custom form. .as_p formats our form in parahraphs #}
+                {{ form|crispy }}
 
-        <input class="btn btn-primary" type="submit" value="Sign Up">
-    </form>
+                <input class="btn btn-primary" type="submit" value="Sign Up">
+            </form>
+        </div>
+    </div>
 
 {% endblock %}
