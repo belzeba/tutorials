@@ -15,11 +15,16 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+
+# Different views (own)
 from newsletter import views as newsletter_views
+from contact import views as contact_views
 
 urlpatterns = [
     # URL for homepage
     url(r'^$', newsletter_views.home, name='home'),
+    # URL for contact page
+    url(r'^contact/$', contact_views.contact, name='contact'),
     # URL for admin page
     url(r'^admin/', admin.site.urls),
 ]
