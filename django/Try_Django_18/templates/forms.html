@@ -6,14 +6,14 @@
 </head>
 <body>
 
-    {# CSRF token added to give some security #}
-    <form method="POST" action="">{%  csrf_token %}
+{# CSRF token added to give some security #}
+<form method="POST" action="">{% csrf_token %}
 
-        {# Render our custom form. .as_p formats our form in parahraphs #}
-        {{ form.as_p }}
+    {# Render our custom form. .as_p formats our form in parahraphs #}
+    {{ form.as_p }}
 
-        <input type="submit" value="Contact Us">
-    </form>
+    <input type="submit" value="Contact Us">
+</form>
 
 </body>
 </html>
