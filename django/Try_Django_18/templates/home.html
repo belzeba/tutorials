@@ -5,8 +5,21 @@
     <title>Try Django 1.8 Tutorial</title>
 </head>
 <body>
-<h1>Hello {{ title }}</h1>
-{{ user }}
-{{ request.user }}
+    <h1>Hello {{ title }}</h1>
+
+    {% comment these show that you can access username without adding it to context %}
+    {{ user }}
+    {{ request.user }}
+    {% endcomment %}
+
+    {# CSRF token added on the to give some security #}
+    <form method="POST" action="">{%  csrf_token %}
+
+        {# Render our custom form #}
+        {{ form }}
+
+        <input type="submit" value="Sign Up">
+    </form>
+
 </body>
 </html>
