@@ -9,6 +9,13 @@
     Welcome |
 {% endblock %}
 
+{# CSS Block #}
+<style>
+{% block style %}
+
+{% endblock %}
+</style>
+
 {# Block for content of Jumbotron #}
 {% block jumbotron_content %}
     {# Bootstrap row and column magic to get responsive site #}
@@ -22,7 +29,7 @@
             </p>
         </div>
         {# Div for video ... #}
-        <div class="col-sm-6" style="background-color: #0f0f0f;height: 300px">
+        <div class="col-sm-6" style="background-color: #0f0f0f;height: 300px;">
 
         </div>
     </div>
@@ -32,7 +39,7 @@
 {% block content %}
     <div class="row">
         <div class="col-sm-3 pull-right">
-            <p class="lead">{{ title }}</p>
+            <p class="lead text-align-center">{{ title }}</p>
 
             {% comment these show that you can access username without adding it to context %}
             {{ user }}
@@ -49,13 +56,13 @@
             </form>
         </div>
         <div class="col-sm-3">
-            <p class="lead">Have fun with Django &amp; Bootstrap</p>
+            <p class="lead text-align-center">Have fun with Django &amp; Bootstrap</p>
         </div>
         <div class="col-sm-3">
-            <p class="lead">Tutorial for beginners of any kind.</p>
+            <p class="lead text-align-center">Tutorial for beginners of any kind.</p>
         </div>
         <div class="col-sm-3">
-            <p class="lead">Open Source - Always</p>
+            <p class="lead text-align-center">Open Source - Always</p>
         </div>
     </div>
 
