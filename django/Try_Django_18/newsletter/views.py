@@ -7,11 +7,11 @@ from .forms import SignUpForm
 # View for homepage
 def home(request):
     # Variable for title
-    title = "World"
+    title = "Welcome"
 
     # Check is the user authenticated and change title if is
     if request.user.is_authenticated():
-        title = "there {0}".format(request.user)
+        title += " {0}".format(request.user)
 
     form = SignUpForm
 
