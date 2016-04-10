@@ -17,5 +17,8 @@ from django.conf.urls import url
 from django.contrib import admin
 
 urlpatterns = [
+    # URL for homepage
+    url(r'^$', 'newsletter.views.home', name='home'),
+    # URL for admin page
     url(r'^admin/', admin.site.urls),
 ]
