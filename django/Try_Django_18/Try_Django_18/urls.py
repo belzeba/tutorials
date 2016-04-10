@@ -21,12 +21,15 @@ from django.conf.urls.static import static
 # Different views (own)
 from newsletter import views as newsletter_views
 from contact import views as contact_views
+from Try_Django_18 import views as trydjango_views
 
 urlpatterns = [
     # URL for homepage
     url(r'^$', newsletter_views.home, name='home'),
     # URL for contact page
     url(r'^contact/$', contact_views.contact, name='contact'),
+    # URL for about page
+    url(r'^about/$', trydjango_views.about, name='about'),
     # URL for admin page
     url(r'^admin/', admin.site.urls),
 ]
