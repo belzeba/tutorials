@@ -1,6 +1,9 @@
 {# Inherit the base.html -template #}
 {% extends 'base.html' %}
 
+{# Load 3rd party tags for forms #}
+{% load crispy_forms_tags %}
+
 {# Header Title block #}
 {% block head_title %}
     Welcome |
@@ -25,17 +28,17 @@
     <h1>{{ title }}</h1>
 
     {% comment these show that you can access username without adding it to context %}
-{{ user }}
-{{ request.user }}
-{% endcomment %}
+    {{ user }}
+    {{ request.user }}
+    {% endcomment %}
 
     {# CSRF token added to give some security #}
     <form method="POST" action="">{% csrf_token %}
 
         {# Render our custom form. .as_p formats our form in parahraphs #}
-        {{ form.as_p }}
+        {{ form|crispy }}
 
-        <input type="submit" value="Sign Up">
+        <input class="btn btn-primary" type="submit" value="Sign Up">
     </form>
 
 {% endblock %}

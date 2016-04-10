@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'crispy_forms',  # 3rd party app
     'newsletter',
     'contact',
 ]
@@ -119,3 +120,6 @@ STATICFILES_DIRS = (
 # ... and same for Media (not necessary needed)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'mediafiles')
+
+# Crispy Form Template
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
