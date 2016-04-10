@@ -15,13 +15,13 @@ Including another URLconf
 """
 from django.conf import settings
 from django.conf.urls import url
-from django.contrib import admin
 from django.conf.urls.static import static
+from django.contrib import admin
 
 # Different views (own)
 from newsletter import views as newsletter_views
 from contact import views as contact_views
-from Try_Django_18 import views as trydjango_views
+from about import views as about_views
 
 urlpatterns = [
     # URL for homepage
@@ -29,7 +29,7 @@ urlpatterns = [
     # URL for contact page
     url(r'^contact/$', contact_views.contact, name='contact'),
     # URL for about page
-    url(r'^about/$', trydjango_views.about, name='about'),
+    url(r'^about/$', about_views.about, name='about'),
     # URL for admin page
     url(r'^admin/', admin.site.urls),
 ]
