@@ -42,4 +42,4 @@ def home(request):
         }
 
     # Return the template with context
-    return render(request, "base.html", context)
+    return render(request, "home.html", context)

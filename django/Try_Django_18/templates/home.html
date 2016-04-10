@@ -1,25 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Try Django 1.8 Tutorial</title>
-</head>
-<body>
-    <h1>{{ title }}</h1>
+{# Inherit the base.html -template #}
+{% extends 'base.html' %}
 
-    {% comment these show that you can access username without adding it to context %}
-    {{ user }}
-    {{ request.user }}
-    {% endcomment %}
+<!-- Main component for a primary marketing message or call to action -->
+<div class="jumbotron">
+    <h1>Navbar example</h1>
+    <p>This example is a quick exercise to illustrate how the default, static and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
+    <p>To see the difference between static and fixed top navbars, just scroll.</p>
+    <p>
+        <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">View navbar docs &raquo;</a>
+    </p>
+</div>
 
-    {# CSRF token added to give some security #}
-    <form method="POST" action="">{%  csrf_token %}
+{# Make block that shows in base.html -template block #}
+{% block content %}
+<h1>{{ title }}</h1>
 
-        {# Render our custom form. .as_p formats our form in parahraphs #}
-        {{ form.as_p }}
+{% comment these show that you can access username without adding it to context %}
+{{ user }}
+{{ request.user }}
+{% endcomment %}
 
-        <input type="submit" value="Sign Up">
-    </form>
+{# CSRF token added to give some security #}
+<form method="POST" action="">{%  csrf_token %}
 
-</body>
-</html>
+    {# Render our custom form. .as_p formats our form in parahraphs #}
+    {{ form.as_p }}
+
+    <input type="submit" value="Sign Up">
+</form>
+
+{% endblock %}
