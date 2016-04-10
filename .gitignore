@@ -79,19 +79,19 @@ target/
 .idea/jsLibraryMappings.xml
 
 # Sensitive or high-churn files:
-.idea/dataSources.ids
-.idea/dataSources.xml
-.idea/dataSources.local.xml
-.idea/sqlDataSources.xml
-.idea/dynamic.xml
-.idea/uiDesigner.xml
+/.idea/dataSources.ids
+/.idea/dataSources.xml
+/.idea/dataSources.local.xml
+/.idea/sqlDataSources.xml
+/.idea/dynamic.xml
+/.idea/uiDesigner.xml
 
 # Gradle:
-.idea/gradle.xml
-.idea/libraries
+/.idea/gradle.xml
+/.idea/libraries
 
 # Mongo Explorer plugin:
-.idea/mongoSettings.xml
+/.idea/mongoSettings.xml
 
 ## File-based project format:
 *.iws
@@ -102,7 +102,7 @@ target/
 /out/
 
 # mpeltonen/sbt-idea plugin
-.idea_modules/
+/.idea_modules/
 
 # JIRA plugin
 atlassian-ide-plugin.xml
