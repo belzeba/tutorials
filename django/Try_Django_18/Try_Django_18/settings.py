@@ -106,3 +106,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# Directory to serve static files after deploy (AKA when in production)
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# Directories where to look for 'global'/non-app static files
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "static"),
+)
