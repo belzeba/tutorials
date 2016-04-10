@@ -24,7 +24,7 @@ def contact(request):
         # Assign variables for mail
         subject = "Website Contact"
         from_email = "trydjango18@no-good.com"
-        to_email = ["Taks1960@cuvox.de"]
+        to_email = ["Taks1960@cuvox.de"]  # fake mail generated: http://www.fakemailgenerator.com
         contact_message = "{0}: {1} via {2}".format(form_full_name, form_message, form_email)
 
         # Send email
