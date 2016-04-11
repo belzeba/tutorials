@@ -40,9 +40,11 @@ INSTALLED_APPS = [
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
+    'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'crispy_forms',  # 3rd party app
+    'registration',  # 3rd party app
     'newsletter',
     'contact',
 ]
@@ -123,3 +125,7 @@ MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'mediafiles')
 
 # Crispy Form Template
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
+
+# Django Registration Redux settings
+ACCOUNT_ACTIVATION_DAYS = 7
+REGISTRATION_AUTO_LOGIN = True
