@@ -26,29 +26,31 @@
 
 {# Block for Jumbotron #}
 {% block jumbotron %}
-    <!-- Main component for a primary marketing message or call to action -->
-    <div class="jumbotron">
-        <div class="container">
-            {# Bootstrap row and column magic to get responsive site #}
-            <div class="row">
-                <div class="col-sm-6">
-                    <h1>Try Django 1.8 Tutorial</h1>
-                    <p>This is Django 1.8 "The MVP Landing project" tutorial. This Tutorial goes over the very basic
-                        but fundamental things and concepts. Be sure to try it out!</p>
-                    <p>
-                        <a class="btn btn-lg btn-primary" href="" role="button">Join Us &raquo;</a>
-                    </p>
+    {# Show Jumbotron only when user is not logged in #}
+    {% if not request.user.is_authenticated %}
+        <!-- Main component for a primary marketing message or call to action -->
+        <div class="jumbotron">
+            <div class="container">
+                {# Bootstrap row and column magic to get responsive site #}
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h1>Try Django 1.8 Tutorial</h1>
+                        <p>This is Django 1.8 "The MVP Landing project" tutorial. This Tutorial goes over the very basic
+                            but fundamental things and concepts. Be sure to try it out!</p>
+                        <p>
+                            <a class="btn btn-lg btn-primary" href="" role="button">Join Us &raquo;</a>
+                        </p>
+                    </div>
+                    {# Div for video ... #}
+                    <div class="col-sm-6">
+                        <iframe width="560" height="315"
+                                src="https://www.youtube.com/embed/videoseries?list=PLEsfXFp6DpzRcd-q4vR5qAgOZUuz8041S"
+                                frameborder="0" allowfullscreen></iframe>
+                    </div>
                 </div>
-                {# Div for video ... #}
-                <div class="col-sm-6">
-                    <iframe width="560" height="315"
-                            src="https://www.youtube.com/embed/videoseries?list=PLEsfXFp6DpzRcd-q4vR5qAgOZUuz8041S"
-                            frameborder="0" allowfullscreen></iframe>
-                </div>
-            </div>
-        </div> <!-- /container -->
-    </div>
-
+            </div> <!-- /container -->
+        </div>
+    {% endif %}
 {% endblock %}
 
 {# Make block that shows in base.html -template block #}
@@ -57,52 +59,52 @@
         <h1>You are logged in</h1>
         {{ queryset }}
     {% else %}
-    <div class="row">
-        <div class="col-sm-3 pull-right">
-            <p class="lead text-align-center">{{ title }}</p>
+        <div class="row">
+            <div class="col-sm-3 pull-right">
+                <p class="lead text-align-center">{{ title }}</p>
 
-            {% comment these show that you can access username without adding it to context %}
+                {% comment these show that you can access username without adding it to context %}
             {{ user }}
             {{ request.user }}
             {% endcomment %}
 
-            {# CSRF token added to give some security #}
-            <form method="POST" action="">{% csrf_token %}
+                {# CSRF token added to give some security #}
+                <form method="POST" action="">{% csrf_token %}
 
-                {# Render our custom form. .as_p formats our form in parahraphs #}
-                {{ form|crispy }}
+                    {# Render our custom form. .as_p formats our form in parahraphs #}
+                    {{ form|crispy }}
 
-                <input class="btn btn-primary" type="submit" value="Sign Up">
-            </form>
-        </div>
-        <div class="col-sm-3">
-            <p class="lead text-align-center">Fun with Django&amp;Bootstrap
-                <br><br>
+                    <input class="btn btn-primary" type="submit" value="Sign Up">
+                </form>
+            </div>
+            <div class="col-sm-3">
+                <p class="lead text-align-center">Fun with Django&amp;Bootstrap
+                    <br><br>
                 <span class="fa-stack fa-lg fa-4x">
                     <i class="fa fa-heart fa-stack-2x"></i>
                     <i class="fa fa-magic fa-stack-1x fa-inverse"></i>
                 </span>
-            </p>
-        </div>
-        <div class="col-sm-3">
-            <p class="lead text-align-center">Tutorial for beginners
-                <br>
+                </p>
+            </div>
+            <div class="col-sm-3">
+                <p class="lead text-align-center">Tutorial for beginners
+                    <br>
                 <span class="fa-stack fa-lg fa-4x">
                     <i class="fa fa-comment-o fa-stack-2x"></i>
                     <i class="fa fa-bolt fa-stack-1x"></i>
                 </span>
-            </p>
-        </div>
-        <div class="col-sm-3">
-            <p class="lead text-align-center">Open Source - Always
-                <br><br>
+                </p>
+            </div>
+            <div class="col-sm-3">
+                <p class="lead text-align-center">Open Source - Always
+                    <br><br>
                 <span class="fa-stack fa-lg fa-4x">
                     <i class="fa fa-circle-o-notch fa-stack-2x"></i>
                     <i class="fa fa-github fa-stack-1x"></i>
                 </span>
-            </p>
+                </p>
+            </div>
         </div>
-    </div>
     {% endif %}
 
 {% endblock %}
