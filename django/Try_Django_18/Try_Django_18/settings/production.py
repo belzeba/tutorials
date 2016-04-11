@@ -29,6 +29,9 @@ if not settings.DEBUG:
     # SECURITY WARNING: don't run with debug turned on in production!
     DEBUG = False
 
+    # Uncomment line below and add admins
+    # ADMINS = (("NAME", "EMAIL"),)
+
     ALLOWED_HOSTS = ['*']
 
     # Configured Email Host
