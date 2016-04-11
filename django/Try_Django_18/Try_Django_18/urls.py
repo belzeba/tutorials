@@ -14,9 +14,10 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf import settings
-from django.conf.urls import url
+from django.conf.urls import url, include
 from django.conf.urls.static import static
 from django.contrib import admin
+
 
 # Different views (own)
 from newsletter import views as newsletter_views
@@ -32,6 +33,8 @@ urlpatterns = [
     url(r'^about/$', about_views.about, name='about'),
     # URL for admin page
     url(r'^admin/', admin.site.urls),
+    # URL for accounts (Django Registration Redux 3rd party app)
+    url(r'^accounts/', include('registration.backends.simple.urls')),
 ]
 
 if settings.DEBUG:
