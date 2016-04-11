@@ -36,6 +36,7 @@ EMAIL_PORT = 25
 # Application definition
 
 INSTALLED_APPS = [
+    'registration',  # 3rd party app
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -44,7 +45,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'crispy_forms',  # 3rd party app
-    'registration',  # 3rd party app
     'newsletter',
     'contact',
 ]
@@ -129,6 +129,6 @@ CRISPY_TEMPLATE_PACK = 'bootstrap3'
 # Django Registration Redux settings
 ACCOUNT_ACTIVATION_DAYS = 7
 REGISTRATION_AUTO_LOGIN = False
-REGISTRATION_EMAIL_HTML = False
 SITE_ID = 1
 LOGIN_REDIRECT_URL = "/"
+REGISTRATION_DEFAULT_FROM_EMAIL = "trydjango18@no-good.com"

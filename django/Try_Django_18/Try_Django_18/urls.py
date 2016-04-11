@@ -34,7 +34,7 @@ urlpatterns = [
     # URL for admin page
     url(r'^admin/', admin.site.urls),
     # URL for accounts (Django Registration Redux 3rd party app)
-    url(r'^accounts/', include('registration.backends.simple.urls')),
+    url(r'^accounts/', include('registration.backends.default.urls')),
 ]
 
 if settings.DEBUG:
