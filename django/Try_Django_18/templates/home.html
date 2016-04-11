@@ -56,8 +56,32 @@
 {# Make block that shows in base.html -template block #}
 {% block content %}
     {% if request.user.is_authenticated %}
-        <h1>You are logged in</h1>
-        {{ queryset }}
+        <h1>You are logged in!</h1>
+
+        {# If queryset is set, user is member of staff #}
+        {% if queryset %}
+            <h2>Welcome Staff member</h2>
+            <br>
+            {# Make table where to put queryset #}
+            <table class="table">
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Created</th>
+                <th>Updated</th>
+            </tr>
+            {# Iterate through the queryset #}
+            {% for object in queryset %}
+                <tr>
+                    <td>{{ object.full_name }}</td>
+                    <td>{{ object }}</td>
+                    <td>{{ object.timestamp|timesince }} ago</td>
+                    <td>{{ object.updated|timesince }} ago</td>
+                </tr>
+            {% endfor %}
+            </table>
+
+        {% endif %}
     {% else %}
         <div class="row">
             <div class="col-sm-3 pull-right">

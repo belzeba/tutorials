@@ -1,6 +1,7 @@
 from django.shortcuts import render
 
 from .forms import SignUpForm
+from .models import SignUp
 
 
 # Create your views here.
@@ -41,10 +42,16 @@ def home(request):
             "title": "Thank you!",
         }
 
-    # Check if user is authenticated and do stuff
+    # Check if user is authenticated, and staff member. If true get all sign ups
     if request.user.is_authenticated() and request.user.is_staff:
+        # Get all sign ups and order them by timestamp (desc)
+        queryset = SignUp.objects.all().order_by('-timestamp')
+
+        # Below would filter the queryset by name (like)
+        # queryset = SignUp.objects.all().order_by('-timestamp').filter(full_name__icontains="karri")
+
         context = {
-            "queryset": [123, 456],
+            "queryset": queryset,
         }
 
     # Return the template with context
