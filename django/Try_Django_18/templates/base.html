@@ -30,19 +30,15 @@
 
 {% include 'navbar.html' %}
 
+{# Block for Jumbotron #}
+{% block jumbotron %}
 
-<div class="container">
-    {# Block for Jumbotron #}
-    {% block jumbotron %}
+{% endblock %}
 
-    {% endblock %}
+{# Block for our custom content #}
+{% block content %}
 
-    {# Block for our custom content #}
-    {% block content %}
-
-    {% endblock %}
-
-</div> <!-- /container -->
+{% endblock %}
 
 {# Include javascript files on bottom to increase performance #}
 {% include 'javascript.html' %}

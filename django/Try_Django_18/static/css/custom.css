@@ -1,3 +1,40 @@
 .text-align-center {
     text-align: center;
 }
+
+.navbar-own-static-top {
+    margin-bottom: 19px;
+    border-color: #1A5F23;
+    border-radius: 1px;
+    background: #0E3D14 none;
+
+}
+
+.jumbotron {
+    background-color: #0E3D14;
+    color: #fff;
+}
+
+.navbar-default .navbar-brand {
+    color: #fff;
+}
+
+.navbar-default .navbar-brand:hover {
+    color: #777;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+    color: #999;
+}
+
+.navbar-default .navbar-toggle {
+    border-color: transparent !important;
+}
+
+.navbar-toggle {
+    background-color: #0E3D14 !important;
+}
+
+.navbar-toggle:hover {
+    background-color: #1A5F23 !important;
+}
