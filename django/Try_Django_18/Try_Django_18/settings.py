@@ -29,7 +29,7 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 # Configured Email Host
-EMAIL_HOST = 'smtp.kolumbus.fi'
+EMAIL_HOST = 'not-working.email.host'
 EMAIL_PORT = 25
 
 

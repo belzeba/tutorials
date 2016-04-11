@@ -35,10 +35,13 @@
 
 {% endblock %}
 
-{# Block for our custom content #}
-{% block content %}
+{# Let's keep content in 'container' #}
+<div class="container">
+    {# Block for our custom content #}
+    {% block content %}
 
-{% endblock %}
+    {% endblock %}
+</div>
 
 {# Include javascript files on bottom to increase performance #}
 {% include 'javascript.html' %}

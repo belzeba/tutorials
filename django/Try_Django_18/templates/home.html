@@ -41,7 +41,9 @@
                 </div>
                 {# Div for video ... #}
                 <div class="col-sm-6">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLEsfXFp6DpzRcd-q4vR5qAgOZUuz8041S" frameborder="0" allowfullscreen></iframe>
+                    <iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/videoseries?list=PLEsfXFp6DpzRcd-q4vR5qAgOZUuz8041S"
+                            frameborder="0" allowfullscreen></iframe>
                 </div>
             </div>
         </div> <!-- /container -->
@@ -51,6 +53,10 @@
 
 {# Make block that shows in base.html -template block #}
 {% block content %}
+    {% if request.user.is_authenticated %}
+        <h1>You are logged in</h1>
+        {{ queryset }}
+    {% else %}
     <div class="row">
         <div class="col-sm-3 pull-right">
             <p class="lead text-align-center">{{ title }}</p>
@@ -70,18 +76,18 @@
             </form>
         </div>
         <div class="col-sm-3">
-            <p class="lead text-align-center">Have fun with Django &amp; Bootstrap
+            <p class="lead text-align-center">Fun with Django&amp;Bootstrap
                 <br><br>
-                <span class="fa-stack fa-lg fa-5x">
+                <span class="fa-stack fa-lg fa-4x">
                     <i class="fa fa-heart fa-stack-2x"></i>
                     <i class="fa fa-magic fa-stack-1x fa-inverse"></i>
                 </span>
             </p>
         </div>
         <div class="col-sm-3">
-            <p class="lead text-align-center">Tutorial for beginners of any kind.
+            <p class="lead text-align-center">Tutorial for beginners
                 <br>
-                <span class="fa-stack fa-lg fa-5x">
+                <span class="fa-stack fa-lg fa-4x">
                     <i class="fa fa-comment-o fa-stack-2x"></i>
                     <i class="fa fa-bolt fa-stack-1x"></i>
                 </span>
@@ -90,12 +96,13 @@
         <div class="col-sm-3">
             <p class="lead text-align-center">Open Source - Always
                 <br><br>
-                <span class="fa-stack fa-lg fa-5x">
-                    <i class="fa fa-circle-o-notch fa-stack-2x fa-spin"></i>
+                <span class="fa-stack fa-lg fa-4x">
+                    <i class="fa fa-circle-o-notch fa-stack-2x"></i>
                     <i class="fa fa-github fa-stack-1x"></i>
                 </span>
             </p>
         </div>
     </div>
+    {% endif %}
 
 {% endblock %}

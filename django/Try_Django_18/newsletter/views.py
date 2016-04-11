@@ -7,7 +7,7 @@ from .forms import SignUpForm
 # View for homepage
 def home(request):
     # Variable for title
-    title = "Welcome"
+    title = "Sign Up Now"
 
     # Add custom form to variable. If POST data is found, send it for validation, else not
     form = SignUpForm(request.POST or None)
@@ -39,6 +39,12 @@ def home(request):
         # Edit context
         context = {
             "title": "Thank you!",
+        }
+
+    # Check if user is authenticated and do stuff
+    if request.user.is_authenticated() and request.user.is_staff:
+        context = {
+            "queryset": [123, 456],
         }
 
     # Return the template with context
